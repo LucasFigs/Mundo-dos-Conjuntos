@@ -1,0 +1,45 @@
+<!-- conjuntos.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Conjuntos - Plataforma de Aprendizagem</title>
+</head>
+<body>
+    <header>
+        <h1>Conjuntos</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="relacoes.html">Relações</a></li>
+                <li><a href="funcoes.html">Funções</a></li>
+                <li><a href="modo-completo.html">Modo Completo</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>O que são Conjuntos?</h2>
+            <p>Um conjunto é uma coleção de elementos, como números ou objetos, que possuem uma característica em comum.</p>
+            <h3>Exemplo Interativo:</h3>
+            <div id="exemplo-conjunto">
+                <p>Conjunto A = {1, 2, 3, 4}</p>
+                <p>Conjunto B = {3, 4, 5, 6}</p>
+                <button onclick="mostrarIntersecao()">Mostrar Interseção</button>
+                <div id="resultado"></div>
+            </div>
+        </section>
+        <section>
+            <h2>Exercícios</h2>
+            <p>Qual a interseção entre os conjuntos A e B?</p>
+            <button onclick="verificarResposta('1,2')">1, 2</button>
+            <button onclick="verificarResposta('3,4')">3, 4</button>
+            <button onclick="verificarResposta('5,6')">5, 6</button>
+            <div id="feedback"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
