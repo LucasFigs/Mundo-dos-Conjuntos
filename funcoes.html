@@ -1,45 +1,249 @@
-<!-- conjuntos.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Conjuntos - Plataforma de Aprendizagem</title>
+    <title>Plataforma de Aprendizagem - Conjuntos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* CSS para o efeito de flip dos cards */
+        .card-flip {
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .card-flip:hover .card-inner, .card-flip.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .card-front {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .card-back {
+            background-color: #4CAF50;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* Estilos para o feedback */
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Estilo para os botões selecionados */
+        .btn-primary.active {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: white;
+        }
+
+        /* Estilos para os botões de respostas maiores e quadrados */
+        .btn-option {
+            width: 100%;
+            height: 100px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Grid para os botões de resposta */
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        /* Estilo para os botões com imagens */
+        .btn-option img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Conjuntos</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="relacoes.html">Relações</a></li>
-                <li><a href="funcoes.html">Funções</a></li>
-                <li><a href="modo-completo.html">Modo Completo</a></li>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Plataforma de Aprendizagem</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Conjuntos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Relações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Funções</a>
+                </li>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>O que são Conjuntos?</h2>
-            <p>Um conjunto é uma coleção de elementos, como números ou objetos, que possuem uma característica em comum.</p>
-            <h3>Exemplo Interativo:</h3>
-            <div id="exemplo-conjunto">
-                <p>Conjunto A = {1, 2, 3, 4}</p>
-                <p>Conjunto B = {3, 4, 5, 6}</p>
-                <button onclick="mostrarIntersecao()">Mostrar Interseção</button>
-                <div id="resultado"></div>
+        </div>
+    </nav>
+
+    <!-- Página Conjuntos -->
+    <div class="container mt-5">
+        <h1>Conjuntos</h1>
+        <p>Nesta seção, você aprenderá sobre conceitos fundamentais de conjuntos, operações entre conjuntos e suas aplicações.</p>
+    </div>
+
+    <!-- Seção Explicativa -->
+    <section class="container mt-5">
+        <h2>O que são Conjuntos?</h2>
+        <p>Um conjunto é uma coleção de elementos distintos e bem definidos. Por exemplo, o conjunto A = {1, 2, 3} é formado pelos elementos 1, 2 e 3. As operações comuns com conjuntos incluem união, interseção e diferença.</p>
+    </section>
+
+    <!-- Seção de Exemplos Interativos -->
+    <section class="container mt-5">
+        <h2>Exemplos Interativos</h2>
+        <div class="row">
+            <!-- Card para União de Conjuntos -->
+            <div class="col-md-6 mb-4">
+                <div class="card-flip" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h4>Exemplo 1: União de Conjuntos</h4>
+                            <p>Clique para ver a união dos conjuntos A = {1, 2, 3} e B = {3, 4, 5}.</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>União de Conjuntos</h4>
+                            <p>A ∪ B = {1, 2, 3, 4, 5}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-        <section>
-            <h2>Exercícios</h2>
-            <p>Qual a interseção entre os conjuntos A e B?</p>
-            <button onclick="verificarResposta('1,2')">1, 2</button>
-            <button onclick="verificarResposta('3,4')">3, 4</button>
-            <button onclick="verificarResposta('5,6')">5, 6</button>
-            <div id="feedback"></div>
-        </section>
-    </main>
-    <script src="script.js"></script>
+            <!-- Card para Interseção de Conjuntos -->
+            <div class="col-md-6 mb-4">
+                <div class="card-flip" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h4>Exemplo 2: Interseção de Conjuntos</h4>
+                            <p>Clique para ver a interseção dos conjuntos A = {1, 2, 3} e B = {3, 4, 5}.</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Interseção de Conjuntos</h4>
+                            <p>A ∩ B = {3}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Exercícios -->
+    <section class="container mt-5">
+        <h2>Exercícios</h2>
+        <p>Resolva os exercícios abaixo para testar seus conhecimentos sobre conjuntos.</p>
+        <div class="exercise">
+            <p>1. Qual é a união dos conjuntos A = {2, 4, 6} e B = {4, 6, 8}?</p>
+            <div class="btn-grid">
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 0, this)">A) {2, 4, 6, 8}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 1, this)">B) {4, 6}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 2, this)">C) {2, 8}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 3, this)">D) {6, 8}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 4, this)">E) {2, 4}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 5, this)">F) {8}</button>
+            </div>
+            <button class="btn btn-success mt-3" onclick="checkAnswer(0, 0)">Confirmar</button>
+            <button class="btn btn-secondary mt-3" onclick="resetExercise(0)">Limpar</button>
+            <div id="feedback-0" class="feedback"></div>
+        </div>
+        <hr>
+        <div class="exercise">
+            <p>2. Qual imagem representa o conjunto {3, 5, 7}?</p>
+            <div class="btn-grid">
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 0, this)">
+                    <img src="imagem1.jpg" alt="Imagem 1">
+                </button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 1, this)">
+                    <img src="imagem2.jpg" alt="Imagem 2">
+                </button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 2, this)">
+                    <img src="imagem3.jpg" alt="Imagem 3">
+                </button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 3, this)">
+                    <img src="imagem4.jpg" alt="Imagem 4">
+                </button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 4, this)">
+                    <img src="imagem5.jpg" alt="Imagem 5">
+                </button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 5, this)">
+                    <img src="imagem6.jpg" alt="Imagem 6">
+                </button>
+            </div>
+            <button class="btn btn-success mt-3" onclick="checkAnswer(1, 2)">Confirmar</button>
+            <button class="btn btn-secondary mt-3" onclick="resetExercise(1)">Limpar</button>
+            <div id="feedback-1" class="feedback"></div>
+        </div>
+    </section>
+
+    <script>
+        // Função para flip dos cards
+        function flipCard(cardElement) {
+            cardElement.classList.toggle("flipped");
+        }
+
+        // Funções para os exercícios
+        let selectedAnswers = [null, null];
+
+        function selectAnswer(exerciseIndex, answerIndex, btn) {
+            selectedAnswers[exerciseIndex] = answerIndex;
+            const buttons = document.querySelectorAll(`.exercise:nth-of-type(${exerciseIndex + 1}) .btn-option`);
+            buttons.forEach(b => b.classList.remove('btn-primary', 'active'));
+            btn.classList.add('btn-primary', 'active');
+        }
+
+        function checkAnswer(exerciseIndex, correctAnswer) {
+            const feedback = document.getElementById(`feedback-${exerciseIndex}`);
+            if (selectedAnswers[exerciseIndex] === correctAnswer) {
+                feedback.textContent = "Correto!";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = `Errado! A resposta correta é: ${correctAnswer + 1}`;
+                feedback.style.color = "red";
+            }
+        }
+
+        function resetExercise(exerciseIndex) {
+            selectedAnswers[exerciseIndex] = null;
+            const buttons = document.querySelectorAll(`.exercise:nth-of-type(${exerciseIndex + 1}) .btn-option`);
+            buttons.forEach(btn => btn.classList.remove('btn-primary', 'active'));
+            const feedback = document.getElementById(`feedback-${exerciseIndex}`);
+            feedback.textContent = "";
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
