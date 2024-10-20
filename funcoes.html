@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +20,13 @@
             transform-style: preserve-3d;
         }
 
-        .card-flip:hover .card-inner, .card-flip.flipped .card-inner {
+        .card-flip:hover .card-inner,
+        .card-flip.flipped .card-inner {
             transform: rotateY(180deg);
         }
 
-        .card-front, .card-back {
+        .card-front,
+        .card-back {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -41,11 +44,67 @@
             color: #333;
         }
 
+        .card-front p {
+            font-size: 18px;
+            padding-left: 40px;
+            padding-right: 20px;
+        }
+
         .card-back {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #F5F5F5;
+            /* Substituir o verde por um cinza claro */
+            color: #333;
+            /* Mudar o texto para um cinza escuro para melhor legibilidade */
             transform: rotateY(180deg);
         }
+
+
+        .card-back .back-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .card-back h4 {
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .card-back img {
+            width: 170px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+
+        .jorginho .card-inner {
+            height: 150px;
+        }
+
+        /* Estilo para os cards da seção O que são Conjuntos? */
+        .jorginho .card-front p {
+            display: block;
+            /* Garante que o parágrafo se comporte como um bloco */
+            text-align: left;
+            /* Centraliza o texto */
+            width: 100%;
+            /* Garante que o parágrafo ocupe 100% da largura do card */
+            padding: 10px;
+        }
+
+        .jorginho .card-front p:first-child {
+            font-size: 18px;
+            margin-bottom: 10px;
+
+        }
+
+        .jorginho .card-front p:last-child {
+            font-size: 22px;
+            text-align: center;
+        }
+
 
         /* Estilos para o feedback */
         .feedback {
@@ -86,24 +145,23 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Plataforma de Aprendizagem</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="index.html">Plataforma de Aprendizagem</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Conjuntos</a>
+                    <a class="nav-link" href="conjuntos.html">Conjuntos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Relações</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Funções</a>
+                    <a class="nav-link" href="relacoes.html">Relações</a>
                 </li>
             </ul>
         </div>
@@ -111,31 +169,93 @@
 
     <!-- Página Conjuntos -->
     <div class="container mt-5">
-        <h1>Conjuntos</h1>
-        <p>Nesta seção, você aprenderá sobre conceitos fundamentais de conjuntos, operações entre conjuntos e suas aplicações.</p>
+        <h1>Funções</h1>
+        <p>Nesta seção, você aprenderá sobre conceitos fundamentais de conjuntos, operações entre conjuntos e suas
+            aplicações.</p>
     </div>
 
     <!-- Seção Explicativa -->
-    <section class="container mt-5">
+    <section class="container mt-5 jorginho">
         <h2>O que são Conjuntos?</h2>
-        <p>Um conjunto é uma coleção de elementos distintos e bem definidos. Por exemplo, o conjunto A = {1, 2, 3} é formado pelos elementos 1, 2 e 3. As operações comuns com conjuntos incluem união, interseção e diferença.</p>
+        <p>Um conjunto é simplesmente uma coleção de elementos distintos, considerados como um objeto único. Esses
+            elementos podem ser números, objetos ou até outros conjuntos. Os conjuntos podem ser finitos ou infinitos e
+            são utilizados em diversas áreas da matemática.</p>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div>
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <p>Conjunto de números pares menores que 10:</p>
+                            <p><strong>A={2,4,6,8}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div>
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <p>Conjunto de vogais no alfabeto:</p>
+                            <p><strong>V={a,e,i,o,u}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div>
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <p>Conjunto de números pares menores que 10:</p>
+                            <p><strong>A={2,4,6,8}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Subconjuntos</h3>
+        <p>Um conjunto A é chamado de subconjunto de outro conjunto B se todos os elementos de A também pertencem ao conjunto B. Em outras palavras, todo elemento de A está contido em B.
+            <br><br>
+            A notação para subconjunto é A⊆B, o que significa que A é um subconjunto de B.</p>
+            
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <div>
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <p> para os conjuntos A={1,2} e B={1,2,3,4}</p>
+                                <p style="text-align: left;"><strong>A⊆B</strong>, pois todos os elementos de A (os números 1 e 2) também estão em B</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>     
     </section>
+
 
     <!-- Seção de Exemplos Interativos -->
     <section class="container mt-5">
-        <h2>Exemplos Interativos</h2>
+        <h2>Operações com conjuntos</h2>
         <div class="row">
             <!-- Card para União de Conjuntos -->
             <div class="col-md-6 mb-4">
                 <div class="card-flip" onclick="flipCard(this)">
                     <div class="card-inner">
                         <div class="card-front">
-                            <h4>Exemplo 1: União de Conjuntos</h4>
-                            <p>Clique para ver a união dos conjuntos A = {1, 2, 3} e B = {3, 4, 5}.</p>
+                            <h4>União</h4>
                         </div>
                         <div class="card-back">
-                            <h4>União de Conjuntos</h4>
-                            <p>A ∪ B = {1, 2, 3, 4, 5}</p>
+                            <div class="back-content">
+                                <p>A união de dois conjuntos A e B é o conjunto de todos os elementos que estão em A, em
+                                    B,
+                                    ou em ambos.<br><br><strong>Ex:</strong><br> A = {1, 2, 3} e B = {3, 4, 5}.<br>
+                                    <strong>A ∪ B = {1, 2, 3, 4, 5}</strong>
+                                </p>
+                                <img src="/Imagens/uniao.png" alt="imagem de união de conjuntos">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -145,12 +265,62 @@
                 <div class="card-flip" onclick="flipCard(this)">
                     <div class="card-inner">
                         <div class="card-front">
-                            <h4>Exemplo 2: Interseção de Conjuntos</h4>
-                            <p>Clique para ver a interseção dos conjuntos A = {1, 2, 3} e B = {3, 4, 5}.</p>
+                            <h4>Interseção</h4>
                         </div>
                         <div class="card-back">
-                            <h4>Interseção de Conjuntos</h4>
-                            <p>A ∩ B = {3}</p>
+                            <div class="back-content">
+                                <p>A interseção de dois conjuntos A e B é o conjunto de todos os elementos que estão
+                                    tanto em A quanto em B<br><br><strong>Ex:</strong><br> A = {1, 2, 3} e B = {3, 4,
+                                    5}.<br>
+                                    <strong>A ∩ B = {3}</strong>
+                                </p>
+
+                                <img src="/Imagens/intersecao.png" alt="imagem de união de conjuntos">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card para Diferença de Conjuntos -->
+            <div class="col-md-6 mb-4">
+                <div class="card-flip" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h4>Diferença</h4>
+
+                        </div>
+                        <div class="card-back">
+                            <div class="back-content">
+                                <p>A diferença entre dois conjuntos A e B é o conjunto de todos os elementos que estão
+                                    em A, mas não em B.<br><br><strong>Ex:</strong><br> A = {1, 2, 3} e B = {3, 4,
+                                    5}<br>
+                                    <strong>A-B = {1,2}</strong>
+                                </p>
+                                <img src="/Imagens/diferenca.png" alt="imagem de união de conjuntos">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card para Complementar de Conjuntos -->
+            <div class="col-md-6 mb-4">
+                <div class="card-flip" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h4>Complementar</h4>
+
+                        </div>
+                        <div class="card-back">
+                            <div class="back-content">
+                                <p>O complemento de um conjunto A é o conjunto de todos os elementos que não estão em A,
+                                    considerando um universo U<br><strong>Ex:</strong> Se o universo U = {1,2,3,4,5} e A
+                                    = {1,2}, então o complemento de A seria
+                                    <strong> A
+                                        ′
+                                        ={3,4,5}.</strong>
+                                </p>
+                                <img src="/Imagens/complementar.png" alt="imagem de união de conjuntos">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -165,7 +335,8 @@
         <div class="exercise">
             <p>1. Qual é a união dos conjuntos A = {2, 4, 6} e B = {4, 6, 8}?</p>
             <div class="btn-grid">
-                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 0, this)">A) {2, 4, 6, 8}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 0, this)">A) {2, 4, 6,
+                    8}</button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 1, this)">B) {4, 6}</button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 2, this)">C) {2, 8}</button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 3, this)">D) {6, 8}</button>
@@ -178,30 +349,66 @@
         </div>
         <hr>
         <div class="exercise">
-            <p>2. Qual imagem representa o conjunto {3, 5, 7}?</p>
+            <p>2. Analisando os diagramas a seguir, assinale a alternativa que representa o conjunto (AUB) – (A∩B):</p>
             <div class="btn-grid">
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 0, this)">
-                    <img src="imagem1.jpg" alt="Imagem 1">
+                    <img src="/Imagens/exImagem1.png" alt="Imagem 1">
                 </button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 1, this)">
-                    <img src="imagem2.jpg" alt="Imagem 2">
+                    <img src="/Imagens/exImagem2.png" alt="Imagem 2">
                 </button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 2, this)">
-                    <img src="imagem3.jpg" alt="Imagem 3">
+                    <img src="/Imagens/exImagem3.png" alt="Imagem 3">
                 </button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 3, this)">
-                    <img src="imagem4.jpg" alt="Imagem 4">
+                    <img src="/Imagens/exImagem4.png" alt="Imagem 4">
                 </button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 4, this)">
-                    <img src="imagem5.jpg" alt="Imagem 5">
+                    <img src="/Imagens/exImagem5.png" alt="Imagem 5">
                 </button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 5, this)">
-                    <img src="imagem6.jpg" alt="Imagem 6">
+                    <img src="/Imagens/exImagem6.png" alt="Imagem 6">
                 </button>
             </div>
             <button class="btn btn-success mt-3" onclick="checkAnswer(1, 2)">Confirmar</button>
             <button class="btn btn-secondary mt-3" onclick="resetExercise(1)">Limpar</button>
             <div id="feedback-1" class="feedback"></div>
+        </div>
+        <hr>
+        <div class="exercise">
+            <p>3. A e B são dois conjuntos tais que A - B tem 30 elementos, A ∩ B tem 10 elementos e AUB tem 48
+                elementos. Então o número de elementos de B – A é:</p>
+                <div class="btn-grid">
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 0, this)">A) 8</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 1, this)">B) 10</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 2, this)">C) 12</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 3, this)">D) 18</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 4, this)">E) 3</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 5, this)">F) 22</button>
+                </div>
+                <button class="btn btn-success mt-3" onclick="checkAnswer(2, 0)">Confirmar</button>
+                <button class="btn btn-secondary mt-3" onclick="resetExercise(2)">Limpar</button>
+                <div id="feedback-2" class="feedback"></div>
+        </div>
+        <hr>
+        <div class="exercise">
+            <p>3. Considere os conjuntos
+
+                A = {1, 4, 7} e 
+                B = {1, 3, 4, 5, 7, 8}
+                
+                É correto afirmar que:</p>
+                <div class="btn-grid">
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 0, this)">A) A ⊃ B</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 1, this)">B) B ⊅ A</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 2, this)">C) B ∩ A</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 3, this)">D) B ⊂ A</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 4, this)">E) A ⊂ B</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 5, this)">F) B ⊅ A</button>
+                </div>
+                <button class="btn btn-success mt-3" onclick="checkAnswer(3, 4)">Confirmar</button>
+                <button class="btn btn-secondary mt-3" onclick="resetExercise(3)">Limpar</button>
+                <div id="feedback-3" class="feedback"></div>
         </div>
     </section>
 
@@ -246,4 +453,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
