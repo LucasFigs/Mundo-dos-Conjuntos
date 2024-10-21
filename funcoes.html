@@ -15,7 +15,7 @@
         .card-inner {
             position: relative;
             width: 100%;
-            height: 200px;
+            height: 370px;
             transition: transform 0.6s;
             transform-style: preserve-3d;
         }
@@ -80,7 +80,7 @@
 
 
         .jorginho .card-inner {
-            height: 150px;
+            height: 220px;
         }
 
         /* Estilo para os cards da seção O que são Conjuntos? */
@@ -101,7 +101,7 @@
         }
 
         .jorginho .card-front p:last-child {
-            font-size: 22px;
+            font-size: 17px;
             text-align: center;
         }
 
@@ -170,91 +170,59 @@
     <!-- Página Conjuntos -->
     <div class="container mt-5">
         <h1>Funções</h1>
-        <p>Nesta seção, você aprenderá sobre conceitos fundamentais de conjuntos, operações entre conjuntos e suas
-            aplicações.</p>
+        <p>Nesta seção, você aprenderá sobre os conceitos fundamentais de funções, os diferentes tipos de funções e suas propriedades. Exploraremos como as funções são utilizadas para relacionar dois conjuntos.</p>
     </div>
 
     <!-- Seção Explicativa -->
     <section class="container mt-5 jorginho">
-        <h2>O que são Conjuntos?</h2>
-        <p>Um conjunto é simplesmente uma coleção de elementos distintos, considerados como um objeto único. Esses
-            elementos podem ser números, objetos ou até outros conjuntos. Os conjuntos podem ser finitos ou infinitos e
-            são utilizados em diversas áreas da matemática.</p>
+        <h2>O que são Funções?</h2>
+        <p>Uma função é uma relação especial entre dois conjuntos, onde cada elemento do primeiro conjunto (domínio) está associado a exatamente um elemento do segundo conjunto (contradomínio). Em outras palavras, uma função "transforma" elementos de um conjunto em elementos de outro, sem repetir o ponto de partida.</p>
 
         <div class="row">
-            <div class="col-md-4 mb-4">
+            <div class="col-md-6 mb-4">
                 <div>
                     <div class="card-inner">
                         <div class="card-front">
-                            <p>Conjunto de números pares menores que 10:</p>
-                            <p><strong>A={2,4,6,8}</strong></p>
+                            <h4>Notação</h4>
+                            <p>Uma função f:A→B indica que f é uma função que leva os elementos do conjunto A (domínio) para os elementos do conjunto B (contradomínio). Para cada elemento x∈A, a função f atribui um único valor f(x)∈B.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 mb-4">
+            <div class="col-md-6 mb-4">
                 <div>
                     <div class="card-inner">
                         <div class="card-front">
-                            <p>Conjunto de vogais no alfabeto:</p>
-                            <p><strong>V={a,e,i,o,u}</strong></p>
+                            <p>Seja A={1,2,3} e B={4,5,6}, uma função f poderia ser definida como: f(1)=4, f(2)=5, f(3)=6.
+                                <br>
+                                Aqui, o domínio é A={1,2,3} e o contradomínio é B={4,5,6}.</p>
+                                <img src="/Imagens/exfuncoes1.png" alt="imagem de união de conjuntos" style="height: 120px;">
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4 mb-4">
-                <div>
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <p>Conjunto de números pares menores que 10:</p>
-                            <p><strong>A={2,4,6,8}</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h3>Subconjuntos</h3>
-        <p>Um conjunto A é chamado de subconjunto de outro conjunto B se todos os elementos de A também pertencem ao conjunto B. Em outras palavras, todo elemento de A está contido em B.
-            <br><br>
-            A notação para subconjunto é A⊆B, o que significa que A é um subconjunto de B.</p>
-            
-            <div class="row">
-                <div class="col-md-12 mb-4">
-                    <div>
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <p> para os conjuntos A={1,2} e B={1,2,3,4}</p>
-                                <p style="text-align: left;"><strong>A⊆B</strong>, pois todos os elementos de A (os números 1 e 2) também estão em B</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>     
+        </div>     
     </section>
 
 
     <!-- Seção de Exemplos Interativos -->
     <section class="container mt-5">
-        <h2>Operações com conjuntos</h2>
+        <h2>Tipos de Funções</h2>
         <div class="row">
             <!-- Card para União de Conjuntos -->
             <div class="col-md-6 mb-4">
                 <div class="card-flip" onclick="flipCard(this)">
                     <div class="card-inner">
                         <div class="card-front">
-                            <h4>União</h4>
+                            <h4>Injetora (Injetiva)</h4>
                         </div>
                         <div class="card-back">
                             <div class="back-content">
-                                <p>A união de dois conjuntos A e B é o conjunto de todos os elementos que estão em A, em
-                                    B,
-                                    ou em ambos.<br><br><strong>Ex:</strong><br> A = {1, 2, 3} e B = {3, 4, 5}.<br>
-                                    <strong>A ∪ B = {1, 2, 3, 4, 5}</strong>
+                                <p>Uma função é injetora se relaciona cada elemento do domínio a correspondentes distintos no contradomínio. Ou seja, não pode haver dois elementos distintos de A que sejam mapeados para o mesmo elemento de B.<br><strong>Ex:</strong> Seja A={1,2,3} e B={4,5,6}, e a função f definida como: f(1)=4, f(2)=5, f(3)=6.<br>
+                                    <strong>Aqui, todos os elementos de A estão associados a diferentes elementos de B, logo f é injetiva.</strong>
                                 </p>
-                                <img src="/Imagens/uniao.png" alt="imagem de união de conjuntos">
+                                <img src="/Imagens/exFuncoes2.png" alt="imagem de união de conjuntos" style="height: 250px;">
                             </div>
                         </div>
                     </div>
@@ -265,17 +233,15 @@
                 <div class="card-flip" onclick="flipCard(this)">
                     <div class="card-inner">
                         <div class="card-front">
-                            <h4>Interseção</h4>
+                            <h4>Sobrejetora (Sobrejetiva)</h4>
                         </div>
                         <div class="card-back">
                             <div class="back-content">
-                                <p>A interseção de dois conjuntos A e B é o conjunto de todos os elementos que estão
-                                    tanto em A quanto em B<br><br><strong>Ex:</strong><br> A = {1, 2, 3} e B = {3, 4,
-                                    5}.<br>
-                                    <strong>A ∩ B = {3}</strong>
+                                <p>Uma função é sobrejetora se todos os elementos do contradomínio estão associados a pelo menos um elemento do domínio. Ou seja, o contradomínio é completamente "coberto" pela função. Nesse caso, imagem e contradomínio são iguais<br><br><strong>Ex:</strong> Seja A={1,2} e B={3,4}, e a função f definida como: f(1)=3, f(2)=4.<br>
+                                    <strong>Aqui, todos os elementos de B têm alguma pré-imagem em A, então f é sobrejetiva.</strong>
                                 </p>
 
-                                <img src="/Imagens/intersecao.png" alt="imagem de união de conjuntos">
+                                <img src="/Imagens/exfuncoes3.png" alt="imagem de união de conjuntos" style="height: 250px;">
                             </div>
                         </div>
                     </div>
@@ -286,17 +252,15 @@
                 <div class="card-flip" onclick="flipCard(this)">
                     <div class="card-inner">
                         <div class="card-front">
-                            <h4>Diferença</h4>
+                            <h4>Bijetora (Bijetiva)</h4>
 
                         </div>
                         <div class="card-back">
                             <div class="back-content">
-                                <p>A diferença entre dois conjuntos A e B é o conjunto de todos os elementos que estão
-                                    em A, mas não em B.<br><br><strong>Ex:</strong><br> A = {1, 2, 3} e B = {3, 4,
-                                    5}<br>
-                                    <strong>A-B = {1,2}</strong>
+                                <p>Uma função é bijetora se é ao mesmo tempo injetora e sobrejetora. Isso significa que todos os elementos do domínio são mapeados para elementos distintos do contradomínio, e todos os elementos do contradomínio têm uma pré-imagem no domínio.<br><strong>Ex:</strong> Seja A={x,y} e B={1,2}, e a função f definida como: f(x)=1, f(y)=2.<br>
+                                    <strong>Aqui, cada elemento de A está associado a um elemento distinto de B, e todos os elementos de B são atingidos. Logo, f é bijetiva.</strong>
                                 </p>
-                                <img src="/Imagens/diferenca.png" alt="imagem de união de conjuntos">
+                                <img src="/Imagens/exfuncoes4.png" alt="imagem de união de conjuntos" style="height: 250px;">
                             </div>
                         </div>
                     </div>
@@ -307,19 +271,15 @@
                 <div class="card-flip" onclick="flipCard(this)">
                     <div class="card-inner">
                         <div class="card-front">
-                            <h4>Complementar</h4>
+                            <h4>Composta</h4>
 
                         </div>
                         <div class="card-back">
                             <div class="back-content">
-                                <p>O complemento de um conjunto A é o conjunto de todos os elementos que não estão em A,
-                                    considerando um universo U<br><strong>Ex:</strong> Se o universo U = {1,2,3,4,5} e A
-                                    = {1,2}, então o complemento de A seria
-                                    <strong> A
-                                        ′
-                                        ={3,4,5}.</strong>
+                                <p>A composição de funções acontece quando o resultado de uma função é utilizado como entrada para outra função. Se temos duas funções f:A→B e g:B→C, a função composta g∘f é definida como: (g∘f)(x)=g(f(x)).<br><br><strong>Ex:</strong> Seja f:A={1,2}→B={3,4}, onde f(1)=3 e f(2)=4, e g:B={3,4}→C={5,6}, onde g(3)=5 e g(4)=6.<br>
+                                    <strong> A composição g∘f resulta em: (g∘f)(1)=g(f(1))=g(3)=5, (g∘f)(2)=g(f(2))=g(4)=6.</strong>
                                 </p>
-                                <img src="/Imagens/complementar.png" alt="imagem de união de conjuntos">
+                                <img src="/Imagens/exfuncoes5.png" alt="imagem de união de conjuntos"">
                             </div>
                         </div>
                     </div>
@@ -331,82 +291,75 @@
     <!-- Seção de Exercícios -->
     <section class="container mt-5">
         <h2>Exercícios</h2>
-        <p>Resolva os exercícios abaixo para testar seus conhecimentos sobre conjuntos.</p>
+        <p>Resolva os exercícios abaixo para testar seus conhecimentos sobre funções.</p>
         <div class="exercise">
-            <p>1. Qual é a união dos conjuntos A = {2, 4, 6} e B = {4, 6, 8}?</p>
+            <p>1. Seja f:R→R definida por f(x)=2x+3. Qual é a imagem de f quando o domínio é {0,1,2}?</p>
             <div class="btn-grid">
-                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 0, this)">A) {2, 4, 6,
-                    8}</button>
-                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 1, this)">B) {4, 6}</button>
-                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 2, this)">C) {2, 8}</button>
-                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 3, this)">D) {6, 8}</button>
-                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 4, this)">E) {2, 4}</button>
-                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 5, this)">F) {8}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 0, this)">A) {2,4,6}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 1, this)">B) {3,5,7}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 2, this)">C) {1,3,5}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 3, this)">D) {5,7,9}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 4, this)">E) {4,6,8}</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(0, 5, this)">F) {3,6,9}</button>
             </div>
-            <button class="btn btn-success mt-3" onclick="checkAnswer(0, 0)">Confirmar</button>
+            <button class="btn btn-success mt-3" onclick="checkAnswer(0, 1)">Confirmar</button>
             <button class="btn btn-secondary mt-3" onclick="resetExercise(0)">Limpar</button>
             <div id="feedback-0" class="feedback"></div>
         </div>
         <hr>
         <div class="exercise">
-            <p>2. Analisando os diagramas a seguir, assinale a alternativa que representa o conjunto (AUB) – (A∩B):</p>
+            <p>2. Seja f:{1,2,3}→{4,5,6,7} uma função definida por f(1)=5, f(2)=6, e f(3)=7. Qual das propriedades abaixo f possui?</p>
             <div class="btn-grid">
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 0, this)">
-                    <img src="/Imagens/exImagem1.png" alt="Imagem 1">
+                    A) Injetora, mas não sobrejetora
                 </button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 1, this)">
-                    <img src="/Imagens/exImagem2.png" alt="Imagem 2">
+                    B) Sobrejetora, mas não injetora
                 </button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 2, this)">
-                    <img src="/Imagens/exImagem3.png" alt="Imagem 3">
+                    C) Bijetora
                 </button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 3, this)">
-                    <img src="/Imagens/exImagem4.png" alt="Imagem 4">
+                    D) Apenas injetora
                 </button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 4, this)">
-                    <img src="/Imagens/exImagem5.png" alt="Imagem 5">
+                    E) Apenas sobrejetora
                 </button>
                 <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(1, 5, this)">
-                    <img src="/Imagens/exImagem6.png" alt="Imagem 6">
+                    F) Nenhuma das opções
                 </button>
             </div>
-            <button class="btn btn-success mt-3" onclick="checkAnswer(1, 2)">Confirmar</button>
+            <button class="btn btn-success mt-3" onclick="checkAnswer(1, 0)">Confirmar</button>
             <button class="btn btn-secondary mt-3" onclick="resetExercise(1)">Limpar</button>
             <div id="feedback-1" class="feedback"></div>
         </div>
         <hr>
         <div class="exercise">
-            <p>3. A e B são dois conjuntos tais que A - B tem 30 elementos, A ∩ B tem 10 elementos e AUB tem 48
-                elementos. Então o número de elementos de B – A é:</p>
+            <p>3. Considere as funções f:{1,2,3}→{4,5,6} e g:{4,5,6}→{7,8,9}, onde f(1)=4, f(2)=5, f(3)=6 e g(4)=7, g(5)=8, g(6)=9. Qual é o valor de (g∘f)(2)?</p>
                 <div class="btn-grid">
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 0, this)">A) 8</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 1, this)">B) 10</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 2, this)">C) 12</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 3, this)">D) 18</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 4, this)">E) 3</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 5, this)">F) 22</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 0, this)">A) 4</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 1, this)">B) 15</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 2, this)">C) 6</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 3, this)">D) 12</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 4, this)">E) 8</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 5, this)">F) 2</button>
                 </div>
-                <button class="btn btn-success mt-3" onclick="checkAnswer(2, 0)">Confirmar</button>
+                <button class="btn btn-success mt-3" onclick="checkAnswer(2, 4)">Confirmar</button>
                 <button class="btn btn-secondary mt-3" onclick="resetExercise(2)">Limpar</button>
                 <div id="feedback-2" class="feedback"></div>
         </div>
         <hr>
         <div class="exercise">
-            <p>3. Considere os conjuntos
-
-                A = {1, 4, 7} e 
-                B = {1, 3, 4, 5, 7, 8}
-                
-                É correto afirmar que:</p>
+            <p>4. Seja f:R→R definida por f(x)=e x. Qual das seguintes afirmações sobre f é verdadeira?</p>
                 <div class="btn-grid">
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 0, this)">A) A ⊃ B</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 1, this)">B) B ⊅ A</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 2, this)">C) B ∩ A</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 3, this)">D) B ⊂ A</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 4, this)">E) A ⊂ B</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 5, this)">F) B ⊅ A</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 0, this)">A) f é injetora e sobrejetora</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 1, this)">B) f é apenas injetora</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 2, this)">C) f é apenas sobrejetora</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 3, this)">D) f é bijetora</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 4, this)">E) f não é injetora nem sobrejetora</button>
+                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 5, this)">F) f é sobrejetora apenas no conjunto dos reais negativos</button>
                 </div>
-                <button class="btn btn-success mt-3" onclick="checkAnswer(3, 4)">Confirmar</button>
+                <button class="btn btn-success mt-3" onclick="checkAnswer(3, 1)">Confirmar</button>
                 <button class="btn btn-secondary mt-3" onclick="resetExercise(3)">Limpar</button>
                 <div id="feedback-3" class="feedback"></div>
         </div>
