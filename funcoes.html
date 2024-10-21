@@ -430,11 +430,13 @@
 
         function checkAnswer(exerciseIndex, correctAnswer) {
             const feedback = document.getElementById(`feedback-${exerciseIndex}`);
+            const answerLetters = ['a', 'b', 'c', 'd', 'e', 'f']; // Mapeamento das letras para as respostas
+
             if (selectedAnswers[exerciseIndex] === correctAnswer) {
                 feedback.textContent = "Correto!";
                 feedback.style.color = "green";
             } else {
-                feedback.textContent = `Errado! A resposta correta é: ${correctAnswer + 1}`;
+                feedback.textContent = `Errado! A resposta correta é: ${answerLetters[correctAnswer]}`;
                 feedback.style.color = "red";
             }
         }
