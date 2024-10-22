@@ -39,6 +39,7 @@
             border-radius: 8px;
         }
 
+        /* Estilos de fundo e texto dos cards */
         .card-front {
             background-color: #f0f0f0;
             color: #333;
@@ -52,12 +53,9 @@
 
         .card-back {
             background-color: #F5F5F5;
-            /* Substituir o verde por um cinza claro */
             color: #333;
-            /* Mudar o texto para um cinza escuro para melhor legibilidade */
             transform: rotateY(180deg);
         }
-
 
         .card-back .back-content {
             display: flex;
@@ -78,7 +76,6 @@
             margin-left: 20px;
         }
 
-
         .jorginho .card-inner {
             height: 150px;
         }
@@ -86,25 +83,20 @@
         /* Estilo para os cards da seção O que são Conjuntos? */
         .jorginho .card-front p {
             display: block;
-            /* Garante que o parágrafo se comporte como um bloco */
             text-align: left;
-            /* Centraliza o texto */
             width: 100%;
-            /* Garante que o parágrafo ocupe 100% da largura do card */
             padding: 10px;
         }
 
         .jorginho .card-front p:first-child {
             font-size: 18px;
             margin-bottom: 10px;
-
         }
 
         .jorginho .card-front p:last-child {
             font-size: 22px;
             text-align: center;
         }
-
 
         /* Estilos para o feedback */
         .feedback {
@@ -129,6 +121,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
         }
 
         /* Grid para os botões de resposta */
@@ -143,7 +136,76 @@
             max-width: 80%;
             max-height: 80%;
         }
+
+        /* Nova Paleta de Cores */
+        :root {
+            --primary-color: #DF7861;
+            --secondary-color: #6c757d;
+            --background-color: #f8f9fa;
+            --button-color: #DF7861;
+            --text-color: #343a40;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo da Navbar */
+        .navbar {
+            background-color: var(--primary-color);
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        .nav-link:hover {
+            color: #ECB390;
+        }
+
+        .btn-primary {
+            background-color: var(--button-color);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #ECB390;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .btn-grid {
+                grid-template-columns: repeat(3, 1fr);
+                /* Altera para 3 colunas */
+            }
+
+
+            .btn-option {
+                height: auto;
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .btn-option {
+                font-size: 12px;
+            }
+
+            p,
+            .card-front p {
+                font-size: 13px;
+            }
+        }
     </style>
+
 </head>
 
 <body>
@@ -187,7 +249,8 @@
                     <div class="card-inner">
                         <div class="card-front">
                             <p>Conjunto de números pares menores que 10:<br><strong>A={2,4,6,8}</strong></p>
-                                <img src="/Imagens/exConjuntos1.png" alt="imagem de união de conjuntos" style="height: 120px;">
+                            <img src="/Imagens/exConjuntos1.png" alt="imagem de união de conjuntos"
+                                style="height: 120px;">
                         </div>
                     </div>
                 </div>
@@ -198,7 +261,8 @@
                     <div class="card-inner">
                         <div class="card-front">
                             <p>Conjunto de vogais no alfabeto:<br> <strong>V={a,e,i,o,u}</strong></p>
-                            <img src="/Imagens/exConjuntos2.png" alt="imagem de união de conjuntos" style="height: 120px;">
+                            <img src="/Imagens/exConjuntos2.png" alt="imagem de união de conjuntos"
+                                style="height: 120px;">
                         </div>
                     </div>
                 </div>
@@ -208,8 +272,10 @@
                 <div>
                     <div class="card-inner">
                         <div class="card-front">
-                            <p>Conjunto de frutas nordestinas:<br> <strong>B={melão, banana, abacaxi, uva, manga, caju}</strong></p>
-                            <img src="/Imagens/exConjuntos 3.png" alt="imagem de união de conjuntos" style="height: 120px;">
+                            <p>Conjunto de frutas nordestinas:<br> <strong>B={melão, banana, abacaxi, uva, manga,
+                                    caju}</strong></p>
+                            <img src="/Imagens/exConjuntos 3.png" alt="imagem de união de conjuntos"
+                                style="height: 120px;">
                         </div>
                     </div>
                 </div>
@@ -217,23 +283,27 @@
         </div>
 
         <h3>Subconjuntos</h3>
-        <p>Um conjunto A é chamado de subconjunto de outro conjunto B se todos os elementos de A também pertencem ao conjunto B. Em outras palavras, todo elemento de A está contido em B.
+        <p>Um conjunto A é chamado de subconjunto de outro conjunto B se todos os elementos de A também pertencem ao
+            conjunto B. Em outras palavras, todo elemento de A está contido em B.
             <br><br>
-            A notação para subconjunto é A⊆B, o que significa que A é um subconjunto de B.</p>
-            
-            <div class="row">
-                <div class="col-md-12 mb-4">
-                    <div>
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <p> para os conjuntos A={1,2} e B={1,2,3,4}</p>
-                                <p style="text-align: left;"><strong>A⊆B</strong>, pois todos os elementos de A (os números 1 e 2) também estão em B</p>
-                                <img src="/Imagens/exSubconjuntos.png" alt="imagem de união de conjuntos" style="height: 120px;">
-                            </div>
+            A notação para subconjunto é A⊆B, o que significa que A é um subconjunto de B.
+        </p>
+
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div>
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <p> para os conjuntos A={1,2} e B={1,2,3,4}</p>
+                            <p style="text-align: left;"><strong>A⊆B</strong>, pois todos os elementos de A (os números
+                                1 e 2) também estão em B</p>
+                            <img src="/Imagens/exSubconjuntos.png" alt="imagem de união de conjuntos"
+                                style="height: 120px;">
                         </div>
                     </div>
                 </div>
-            </div>     
+            </div>
+        </div>
     </section>
 
 
@@ -379,37 +449,37 @@
         <div class="exercise">
             <p>3. A e B são dois conjuntos tais que A - B tem 30 elementos, A ∩ B tem 10 elementos e AUB tem 48
                 elementos. Então o número de elementos de B – A é:</p>
-                <div class="btn-grid">
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 0, this)">A) 8</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 1, this)">B) 10</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 2, this)">C) 12</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 3, this)">D) 18</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 4, this)">E) 3</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 5, this)">F) 22</button>
-                </div>
-                <button class="btn btn-success mt-3" onclick="checkAnswer(2, 0)">Confirmar</button>
-                <button class="btn btn-secondary mt-3" onclick="resetExercise(2)">Limpar</button>
-                <div id="feedback-2" class="feedback"></div>
+            <div class="btn-grid">
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 0, this)">A) 8</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 1, this)">B) 10</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 2, this)">C) 12</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 3, this)">D) 18</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 4, this)">E) 3</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(2, 5, this)">F) 22</button>
+            </div>
+            <button class="btn btn-success mt-3" onclick="checkAnswer(2, 0)">Confirmar</button>
+            <button class="btn btn-secondary mt-3" onclick="resetExercise(2)">Limpar</button>
+            <div id="feedback-2" class="feedback"></div>
         </div>
         <hr>
         <div class="exercise">
             <p>4. Considere os conjuntos
 
-                A = {1, 4, 7} e 
+                A = {1, 4, 7} e
                 B = {1, 3, 4, 5, 7, 8}
-                
+
                 É correto afirmar que:</p>
-                <div class="btn-grid">
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 0, this)">A) A ⊃ B</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 1, this)">B) B ⊅ A</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 2, this)">C) B ∩ A</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 3, this)">D) B ⊂ A</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 4, this)">E) A ⊂ B</button>
-                    <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 5, this)">F) B ⊅ A</button>
-                </div>
-                <button class="btn btn-success mt-3" onclick="checkAnswer(3, 4)">Confirmar</button>
-                <button class="btn btn-secondary mt-3" onclick="resetExercise(3)">Limpar</button>
-                <div id="feedback-3" class="feedback"></div>
+            <div class="btn-grid">
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 0, this)">A) A ⊃ B</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 1, this)">B) B ⊅ A</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 2, this)">C) B ∩ A</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 3, this)">D) B ⊂ A</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 4, this)">E) A ⊂ B</button>
+                <button class="btn btn-outline-primary btn-option" onclick="selectAnswer(3, 5, this)">F) B ⊅ A</button>
+            </div>
+            <button class="btn btn-success mt-3" onclick="checkAnswer(3, 4)">Confirmar</button>
+            <button class="btn btn-secondary mt-3" onclick="resetExercise(3)">Limpar</button>
+            <div id="feedback-3" class="feedback"></div>
         </div>
     </section>
 

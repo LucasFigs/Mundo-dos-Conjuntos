@@ -1,35 +1,70 @@
 /* style.css */
+
+/* Paleta de cores */
+:root {
+    --primary-color: #DF7861; /* Azul primário do Bootstrap */
+    --secondary-color: #6c757d; /* Cinza */
+    --background-color: #f8f9fa; /* Cor de fundo clara */
+    --button-color: #DF7861; /* Cor de destaque para os botões */
+    --text-color: #343a40; /* Texto escuro */
+}
+
 body {
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+h1, h5 {
     color: white;
-    padding: 1rem;
-    text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
+.card-title {
+    color: var(--primary-color);
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.btn-primary {
+    background-color: var(--button-color);
+    border: none;
+    transition: background-color 0.3s ease;
 }
 
-main {
-    padding: 2rem;
-    text-align: center;
+.btn-primary:hover {
+    background-color: #ECB390; /* Tom mais escuro para hover */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        font-size: 24px;
+        padding: 20px;
+    }
+
+    .card-body p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-body p {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
 }
